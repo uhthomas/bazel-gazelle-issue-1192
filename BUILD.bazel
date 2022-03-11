@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/uhthomas/bazel-gazelle-issue-1191
+gazelle(name = "gazelle")
+
+go_library(
+    name = "bazel-gazelle-issue-1191",
+    srcs = ["tools.go"],
+    importpath = "github.com/uhthomas/bazel-gazelle-issue-1191",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_pressly_goose_v3//cmd/goose"],
+)
